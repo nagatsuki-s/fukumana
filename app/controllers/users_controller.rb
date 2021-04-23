@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @quizzes = current_user.quizzes.order(id: :desc)
+    #@quiz = current_user.quizzes.find(params[:id])
   end
 
   def new

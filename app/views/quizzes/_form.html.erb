@@ -1,0 +1,40 @@
+<div class="offset-sm-2 col-sm-8">
+  <%= form_with(model: quiz, local: true) do |f| %>
+       <%= f.fields_for :genre do |i| %> 
+            <p>クイズのジャンル</p>
+          <div>  
+            <%= i.radio_button :category, :"0" %>
+            <%= i.label :子ども・子育て支援 %>
+            <%= i.radio_button :category, :"1" %>
+            <%= i.label :介護 %>
+            <%= i.radio_button :category, :"2" %>
+            <%= i.label :障害 %>
+            <%= i.radio_button :category, :"3" %>
+            <%= i.label :高齢 %>
+            <%= i.radio_button :category, :"4" %>
+            <%= i.label :マイノリティ %>
+            <%= i.radio_button :category, :"5" %>
+            <%= i.label :地域・居場所 %>
+            <%= i.radio_button :category, :"6" %>
+            <%= i.label :ボランティア %>
+            <%= i.radio_button :category, :"7" %>
+            <%= i.label :多文化 %>
+            <%= i.radio_button :category, :"8" %>
+            <%= i.label :人権 %>
+            <%= i.radio_button :category, :"9" %>
+            <%= i.label :その他 %>
+          </div>
+        <% end %>
+          <div class="form-group">
+            <p>クイズの内容</p>
+            <%= f.text_area :content, class: 'form-control', rows: 5 %>
+          </div>
+          <div class="form-group">
+            <p>クイズの答え</p>
+            <%= f.text_area :answer, class: 'form-control', rows: 5 %>
+          </div>
+          <div class="offset-sm-4 col-sm-4">
+            <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+          </div>
+  <% end %>
+</div>
