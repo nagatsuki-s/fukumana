@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show]
-  #before_action :correct_user, only: [:show]
   
   def show
     @user = User.find(params[:id])
     @quizzes = current_user.quizzes.order(id: :desc)
-    #@quiz = current_user.quizzes.find(params[:id])
   end
 
   def new
@@ -17,7 +15,7 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:success] = 'ユーザー登録をしました。'
-      redirect_to user
+      redirect_to @user
     else
       flash.now[:danger] = '会員登録に失敗しました。'
       render :new
@@ -27,14 +25,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:id, :name, :email, :password, :password_confirmation)
   end
-  
-  # def correct_user
-  #   @user = User.find_by(id: params[:id])
-  #   unless @user
-  #     redirect_back(fallback_location: root_path)
-  #   end
-  # end
   
 end
