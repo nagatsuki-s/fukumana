@@ -4,8 +4,7 @@ class QuizzesController < ApplicationController
   before_action :correct_user, only: [:update, :edit, :destroy]
   
   def index
-    #@user = User.find(params[:id])
-    @quizlist = Quiz.order(id: :desc)
+    @quizlist = Quiz.order(id: :desc).page(params[:page])
   end
 
   def show

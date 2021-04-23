@@ -1,12 +1,14 @@
-<div>
+<div class="offset-sm-2 col-sm-4 py-4">
     <div>
         <h3>クイズ</h3>
-        <p><%= @quiz.created_at %></p>
         <p><%= @quiz.content %></p>
     </div>
-    <div>
+    <div class="py-4 my-4">
         <h3>このクイズの答え</h3>
-        <p><%= @quiz.created_at %></p>
         <p><%= @quiz.answer %></p>
     </div>
+    <p><%= link_to 'クイズ一覧', quizzes_path %>へ</p>
+    <% if logged_in? %>
+        <p><%= link_to 'ユーザーページ', user_path(current_user) %>へ</p>
+    <% end %>
 </div>

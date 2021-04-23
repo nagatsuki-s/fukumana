@@ -3,7 +3,7 @@
         <li class="border-top py-3 my-3">
             <div class="d-flex flex-row justify-content-between">
                 <% unless quiz.genre.blank? %>
-                    <p class="bg-secondary text-white align-self-center px-1"><%= quiz.genre_category %></p>
+                    <p class="badge badge-secondary text-white align-self-center"><%= quiz.genre_category %></p>
                 <% end %>
                 <p>クイズ作成日：<%= quiz.created_at %></p>
             </div>
