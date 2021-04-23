@@ -1,16 +1,18 @@
 <header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
-        <% if logged_in? %>
-            <%= link_to 'ふくまな', user_path(current_user), class: 'nav-link navbar-brand' %>
-        <% else %>    
-            <a class="navbar-brand" href="/">ふくまな</a>
-        <% end %>    
+        <div class="ml-4">
+            <% if logged_in? %>
+                <%= link_to 'ふくまな', user_path(current_user), class: 'nav-link navbar-brand' %>
+            <% else %>    
+                <a class="navbar-brand" href="/">ふくまな</a>
+            <% end %>    
+        </div>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div class="mr-4 collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <% if logged_in? %>
                     <li class="nav-item"><%= link_to 'ユーザー', user_path(current_user), class: 'nav-link' %></li>
