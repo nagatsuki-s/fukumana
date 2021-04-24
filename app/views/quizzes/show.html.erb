@@ -1,14 +1,18 @@
-<div class="offset-sm-2 col-sm-4 py-4">
-    <div>
-        <h3>クイズ</h3>
-        <p><%= @quiz.content %></p>
+<div>
+    <div class="py-4 row">
+        <div class="col-sm-6">
+            <h4 class="border-bottom py-2">クイズの問題</h4>
+            <p><%= simple_format(@quiz.content) %></p>
+        </div>
+        <div class="col-sm-6">
+            <h4 class="border-bottom py-2">クイズの答え</h4>
+            <p><%= simple_format(@quiz.answer) %></p>
+        </div>
     </div>
-    <div class="py-4 my-4">
-        <h3>このクイズの答え</h3>
-        <p><%= @quiz.answer %></p>
+    <div class="py-4">
+        <p><%= link_to 'クイズ一覧', quizzes_path %>へ</p>
+        <% if logged_in? %>
+            <p><%= link_to 'マイページ', user_path(current_user) %>へ</p>
+        <% end %>
     </div>
-    <p><%= link_to 'クイズ一覧', quizzes_path %>へ</p>
-    <% if logged_in? %>
-        <p><%= link_to 'ユーザーページ', user_path(current_user) %>へ</p>
-    <% end %>
-</div>
+</div>    

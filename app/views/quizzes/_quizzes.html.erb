@@ -1,6 +1,9 @@
 <ul class="list-unstyled">
     <% quizzes.each do |quiz| %>
         <li class="border-top py-3 my-3">
+            <div>
+                <h5>クイズ作成者：<%= quiz.user.name %>さん</h5>
+            </div>
             <div class="d-flex flex-row justify-content-between">
                 <% unless quiz.genre.blank? %>
                     <p class="badge badge-secondary text-white align-self-center"><%= quiz.genre_category %></p>
@@ -8,7 +11,7 @@
                 <p>クイズ作成日：<%= quiz.created_at %></p>
             </div>
             <div>
-                <p><%= quiz.content %></p>
+                <p><%= simple_format(quiz.content) %></p>
             </div>
                 <%= link_to "答えを見る", quiz_path(quiz), class: 'btn btn-success btn-sm' %>
                 <% if current_user == quiz.user %>
@@ -19,5 +22,5 @@
                 <% end %>
         </li>    
     <% end %>
-    <%#= pagenate quizzes %>
+    <%= paginate quizzes %>
 </ul>

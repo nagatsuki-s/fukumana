@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @quizzes = current_user.quizzes.order(id: :desc)
+    @quizzes = current_user.quizzes.order(id: :desc).page(params[:page]).per(3)
   end
 
   def new

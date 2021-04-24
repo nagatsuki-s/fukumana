@@ -1,10 +1,10 @@
 class QuizzesController < ApplicationController
   before_action :require_user_logged_in, only: [:new, :create, :update, :edit, :destroy]
-  before_action :set_quiz, only: [:update, :edit, :destroy]
   before_action :correct_user, only: [:update, :edit, :destroy]
+  before_action :set_quiz, only: [:update, :edit, :destroy]
   
   def index
-    @quizlist = Quiz.order(id: :desc).page(params[:page])
+    @quizlist = Quiz.order(id: :desc).page(params[:page]).per(10)
   end
 
   def show
@@ -66,7 +66,7 @@ class QuizzesController < ApplicationController
   def correct_user
     @user = current_user.quizzes.find_by(id: params[:id])
     unless @user
-      redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: quizzes_path)
     end
   end
 

@@ -8,7 +8,7 @@ class Quiz < ApplicationRecord
   def genre_category
     case self.genre.category
     when 0 
-       "子ども・子育て支援"
+       "子ども"
     when 1
        "介護"
     when 2
@@ -18,7 +18,7 @@ class Quiz < ApplicationRecord
     when 4
       "マイノリティ"
     when 5
-      "地域・居場所"
+      "地域"
     when 6
       "ボランティア"
     when 7
