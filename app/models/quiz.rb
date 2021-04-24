@@ -3,6 +3,7 @@ class Quiz < ApplicationRecord
   belongs_to :genre
   accepts_nested_attributes_for :genre
   
+  validates :content, presence: true, length: { maximum: 255 }
   validates :answer, presence: true, length: { maximum: 255 }
   
   def genre_category
