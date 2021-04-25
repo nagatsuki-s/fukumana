@@ -3,6 +3,9 @@ class Quiz < ApplicationRecord
   belongs_to :genre
   accepts_nested_attributes_for :genre
   
+  has_many :favorites, dependent: :destroy
+  has_many :liked_users, through: :favorites, source: :user 
+  
   validates :content, presence: true, length: { maximum: 255 }
   validates :answer, presence: true, length: { maximum: 255 }
   
