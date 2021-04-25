@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     resources :quizzes do
         resources :genres
     end
+    
+    resources :favorites, only: [:create, :destroy]
 end

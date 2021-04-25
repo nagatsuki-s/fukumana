@@ -11,7 +11,8 @@
                 <%= @user.name %>
             </div>
             <div class="card-body">
-                作成したクイズの数：<%= @user.quizzes.count %>
+                <p>作成したクイズの数：<%= @user.quizzes.count %></p>
+                <p>いいねした投稿の数：<%= @user.likes.count %></p>
             </div>
         </div>
         <div class="p-4">

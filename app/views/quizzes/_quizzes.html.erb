@@ -1,6 +1,6 @@
-<ul class="list-unstyled">
+<div>
     <% quizzes.each do |quiz| %>
-        <li class="border-top py-3 my-3">
+        <div class="border-top py-3 my-3">
             <div>
                 <h5>クイズ作成者：<%= quiz.user.name %>さん</h5>
             </div>
@@ -13,14 +13,21 @@
             <div>
                 <p><%= simple_format(quiz.content) %></p>
             </div>
-                <%= link_to "答えを見る", quiz_path(quiz), class: 'btn btn-success btn-sm' %>
-                <% if current_user == quiz.user %>
-                    <%= link_to "編集", edit_quiz_path(quiz), class: 'btn btn-primary btn-sm' %>
-                <% end %>
-                <% if current_user == quiz.user %>
-                    <%= link_to "削除", quiz, method: :delete, data: { confirm: "このクイズを削除しますか？" }, class: 'btn btn-danger btn-sm' %>
-                <% end %>
-        </li>    
+            <div class="row">
+                <div class="col-10">
+                    <%= link_to "答えを見る", quiz_path(quiz), class: 'btn btn-success btn-sm' %>
+                    <% if current_user == quiz.user %>
+                        <%= link_to "編集", edit_quiz_path(quiz), class: 'btn btn-primary btn-sm' %>
+                    <% end %>
+                    <% if current_user == quiz.user %>
+                        <%= link_to "削除", quiz, method: :delete, data: { confirm: "このクイズを削除しますか？" }, class: 'btn btn-danger btn-sm' %>
+                    <% end %>
+                </div>
+                <div class="col-2">   
+                    <%= render "favorites/favorite_button", quiz: quiz %>
+                </div>
+            </div>
+        </div>    
     <% end %>
     <%= paginate quizzes %>
-</ul>
+</div>
