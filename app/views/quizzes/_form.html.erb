@@ -6,34 +6,34 @@
           <h5>クイズのジャンル</h5>
           <p>※クイズが複数のジャンルに当てはまる場合は、最も近いジャンルを選んでください。</p>
           <div class="btn-group btn-group-toggle w-100 mb-4" data-toggle="buttons">
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,0)}" do %>
               <%= i.radio_button :category, "0" %>子ども
             <% end %>
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,1)}" do %>
               <%= i.radio_button :category, "1" %>介護
             <% end %>            
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,2)}" do %>
               <%= i.radio_button :category, "2" %>障害
             <% end %>            
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,3)}" do %>
               <%= i.radio_button :category, "3" %>高齢
             <% end %>            
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,4)}" do %>
               <%= i.radio_button :category, "4" %>マイノリティ
             <% end %>
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,5)}" do %>
               <%= i.radio_button :category, "5" %>地域
             <% end %>            
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,6)}" do %>
               <%= i.radio_button :category, "6" %>ボランティア
             <% end %>            
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,7)}" do %>
               <%= i.radio_button :category, "7" %>多文化
             <% end %>            
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,8)}" do %>
               <%= i.radio_button :category, "8" %>人権
             <% end %>            
-            <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
+            <%= i.label :category, class: "btn btn-outline-secondary w-100 #{is_active(quiz.genre.category,9)}" do %>
               <%= i.radio_button :category, "9" %>その他
             <% end %>
 
