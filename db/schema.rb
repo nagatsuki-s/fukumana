@@ -24,10 +24,8 @@ ActiveRecord::Schema.define(version: 2021_04_20_125321) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "genre_id_id"
     t.bigint "genre_id"
     t.index ["genre_id"], name: "index_quizzes_on_genre_id"
-    t.index ["genre_id_id"], name: "index_quizzes_on_genre_id_id"
     t.index ["user_id"], name: "index_quizzes_on_user_id"
   end
 

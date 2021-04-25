@@ -29,7 +29,7 @@ class Quiz < ApplicationRecord
     when 9
       "その他"
     else
-      ""
+       ""
     end
   end
 end

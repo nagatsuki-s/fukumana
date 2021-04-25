@@ -3,7 +3,8 @@
     <%= render 'layouts/error_messages', model: quiz %>
   
        <%= f.fields_for :genre do |i| %> 
-          <p>クイズのジャンル</p>
+          <h5>クイズのジャンル</h5>
+          <p>※クイズが複数のジャンルに当てはまる場合は、最も近いジャンルを選んでください。</p>
           <div class="btn-group btn-group-toggle w-100 mb-4" data-toggle="buttons">
             <%= i.label :category, class: "btn btn-outline-secondary w-100" do %>
               <%= i.radio_button :category, "0" %>子ども
@@ -40,12 +41,12 @@
         <% end %>
         
         <div class="row my-4">
-          <div class="form-group col-sm-6">
-            <p>クイズの内容</p>
+          <div class="form-group col-md-6">
+            <h5>クイズの内容</h5>
             <%= f.text_area :content, class: 'form-control', rows: 7 %>
           </div>
-          <div class="form-group col-sm-6">
-            <p>クイズの答え</p>
+          <div class="form-group col-md-6">
+            <h5>クイズの答え</h5>
             <%= f.text_area :answer, class: 'form-control', rows: 7 %>
           </div>
         </div>

@@ -24,7 +24,7 @@ class QuizzesController < ApplicationController
     else
       set_quizzes
       flash.now[:danger] = 'クイズを投稿できませんでした。'
-      redirect_back(fallback_location: user_path(current_user))
+      render :new
     end
   end
 
