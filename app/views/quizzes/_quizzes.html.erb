@@ -14,7 +14,7 @@
                 <p><%= simple_format(quiz.content) %></p>
             </div>
             <div class="row">
-                <div class="col-10">
+                <div class="mr-2">
                     <%= link_to "答えを見る", quiz_path(quiz), class: 'btn btn-success btn-sm' %>
                     <% if current_user == quiz.user %>
                         <%= link_to "編集", edit_quiz_path(quiz), class: 'btn btn-primary btn-sm' %>
@@ -23,7 +23,7 @@
                         <%= link_to "削除", quiz, method: :delete, data: { confirm: "このクイズを削除しますか？" }, class: 'btn btn-danger btn-sm' %>
                     <% end %>
                 </div>
-                <div class="col-2">
+                <div>
                     <% if logged_in? %>
                         <%= render "favorites/favorite_button", quiz: quiz %>
                     <% end %>    
